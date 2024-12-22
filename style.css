@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b1522;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.titulo {
+  font-family: monospace;
+  font-size: 8vw;
+  color: skyblue;
+  margin-bottom: 100px;
+}
+
+.bottomtxt {
+  font-family: monospace;
+  font-size: 7vw;
+  color: skyblue;
+  margin-top: 80px;
+}
+
+.heart {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: #ecbee4;
+  transform: rotate(-45deg);
+  box-shadow: 15px 5px 150px 20px #ecbee4;
+  animation: heart 1.5s ease-in-out infinite;
+}
+.heart::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ecbee4;
+  top: -50%;
+  border-radius: 50%;
+}
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ecbee4;
+  right: -50%;
+  border-radius: 50%;
+}
+
+@keyframes heart {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+  25% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */

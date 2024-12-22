@@ -1,0 +1,76 @@
+$heart: #ecbee4;
+$background: #0b1522;
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background;
+    flex-direction: column;  // Alinea verticalmente título y corazón
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  // Centra horizontalmente
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo {
+    font-family: monospace;
+    font-size: 8vw;  // Tamaño responsive
+    color: white;
+    margin-bottom: 100px;  // Espacio entre el título y el corazón
+}
+
+.bottomtxt {
+    font-family: monospace;
+    font-size: 7vw;  // Tamaño responsive
+    color: skyblue;
+    margin-top: 80px;  // Espacio entre el título y el corazón
+
+}
+
+.heart {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background: $heart;
+    transform: rotate(-45deg);
+    box-shadow: 15px 5px 150px 20px $heart;
+    animation: heart 1.5s ease-in-out infinite;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: $heart;
+        top: -50%;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: $heart;
+        right: -50%;
+        border-radius: 50%;
+    }
+}
+
+// Animación del corazón
+@keyframes heart {
+    0% { transform: rotate(-45deg) scale(1); }
+    25% { transform: rotate(-45deg) scale(1.1); }
+    50% { transform: rotate(-45deg) scale(1.2); }
+    75% { transform: rotate(-45deg) scale(1.05); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
